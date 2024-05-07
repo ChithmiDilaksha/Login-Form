@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+   <head>
+    <title>LOGIN</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+   </head>
+<body>
+    <form action="login.php" method="post">
+        <h2>Login</h2>
+        <label>User Name</label>
+        <input type="username" name="username" placeholder="User Name"><br>
+
+        <label>Password</label>
+        <input type="password" name="password" placeholder="Password"><br>
+
+        <button type="submit">Login</button>
+
+      
+    </form>
+    <script>
+    // Parse the URL to get the parameters
+    const urlParams = new URLSearchParams(window.location.search);
+    // Check if 'login' parameter is present and its value is 'success'
+    if (urlParams.has('login') && urlParams.get('login') === 'success') {
+        // If login is successful, display success alert
+        alert("Login is successful!");
+        window.location.href = "dashboard.php";
+
+    } else if (urlParams.has('error')) {
+        // If there's an error parameter, display the error alert
+        alert(urlParams.get('error'));
+    }
+</script>
+
+</body>
+</html>
